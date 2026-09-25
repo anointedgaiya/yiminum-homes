@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Menu, X } from 'lucide-react'
+import { Building2, Menu, X } from 'lucide-react'
 import { ThemeSwitcher } from '@/components/theme-switcher'
 import { Logo } from '@/components/logo'
 import { cn } from '@/lib/utils'
@@ -9,6 +9,7 @@ import { cn } from '@/lib/utils'
 const NAV_LINKS = [
   { label: 'Properties', href: '#properties' },
   { label: 'Services', href: '#services' },
+  { label: 'Management', href: '/management', icon: Building2 },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -46,18 +47,23 @@ export function SiteHeader() {
         </a>
 
         <nav className="hidden items-center gap-9 lg:flex" aria-label="Primary">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className={cn(
-                'text-sm font-medium tracking-wide transition-colors hover:text-brand',
-                scrolled ? 'text-foreground/80' : 'text-white/85 hover:text-white',
-              )}
-            >
-              {link.label}
-            </a>
-          ))}
+          {NAV_LINKS.map((link) => {
+            const Icon = link.icon
+
+            return (
+              <a
+                key={link.href}
+                href={link.href}
+                className={cn(
+                  'inline-flex items-center gap-2 text-sm font-medium tracking-wide transition-colors hover:text-brand',
+                  scrolled ? 'text-foreground/80' : 'text-white/85 hover:text-white',
+                )}
+              >
+                {Icon ? <Icon className="size-4" /> : null}
+                {link.label}
+              </a>
+            )
+          })}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -93,16 +99,21 @@ export function SiteHeader() {
       {mobileOpen && (
         <div className="border-t border-border bg-background/95 px-5 py-4 backdrop-blur-xl lg:hidden">
           <nav className="flex flex-col gap-1" aria-label="Mobile">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setMobileOpen(false)}
-                className="rounded-xl px-3 py-3 text-base font-medium hover:bg-muted"
-              >
-                {link.label}
-              </a>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const Icon = link.icon
+
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setMobileOpen(false)}
+                  className="flex items-center gap-2 rounded-xl px-3 py-3 text-base font-medium hover:bg-muted"
+                >
+                  {Icon ? <Icon className="size-4" /> : null}
+                  {link.label}
+                </a>
+              )
+            })}
             <a
               href="#contact"
               onClick={() => setMobileOpen(false)}
