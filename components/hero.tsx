@@ -64,6 +64,12 @@ export function Hero() {
                 </div>
               ))}
             </div>
+
+            <div className="mt-8 rounded-2xl border border-white/20 bg-white/8 px-4 py-3 backdrop-blur-md shadow-lg shadow-black/10">
+              <p className="text-sm font-medium text-white">
+                Support: Opay - <a href="tel:7039014229" className="text-white underline underline-offset-4">7039014229</a>
+              </p>
+            </div>
           </div>
         </div>
       </div>
