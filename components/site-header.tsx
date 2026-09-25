@@ -71,7 +71,7 @@ export function SiteHeader() {
             Book a viewing
           </a>
           <a
-            href="#contact"
+            href="/payment"
             className="hidden rounded-full border border-border bg-background/90 px-5 py-2.5 text-sm font-semibold text-foreground shadow-sm transition-transform hover:-translate-y-0.5 md:inline-flex"
           >
             Make Payment
@@ -111,7 +111,7 @@ export function SiteHeader() {
               Book a viewing
             </a>
             <a
-              href="#contact"
+              href="/payment"
               onClick={() => setMobileOpen(false)}
               className="mt-2 rounded-full border border-border bg-background px-5 py-3 text-center text-sm font-semibold text-foreground"
             >
