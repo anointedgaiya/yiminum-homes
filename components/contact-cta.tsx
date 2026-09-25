@@ -8,7 +8,7 @@ const FIELD =
   'w-full rounded-xl border border-border bg-background px-4 py-3 text-sm outline-none transition-colors focus:border-brand focus:ring-2 focus:ring-brand/20'
 
 const CONTACT_DETAILS = [
-  { icon: Phone, label: 'Call us', value: '+1 (555) 012-3456' },
+  { icon: Phone, label: 'Call us', value: '07039014229' },
   { icon: Mail, label: 'Email', value: 'hello@yiminumhomes.com' },
   { icon: MapPin, label: 'Visit', value: '400 Skyline Ave, Los Angeles' },
 ]
