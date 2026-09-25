@@ -7,7 +7,7 @@ import { useTheme } from '@/components/theme-provider'
 import { cn } from '@/lib/utils'
 
 export function ThemeSwitcher({ className }: { className?: string }) {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme, autoSwitch, setAutoSwitch } = useTheme()
   const [open, setOpen] = useState(false)
   const ref = useRef<HTMLDivElement>(null)
 
@@ -57,6 +57,34 @@ export function ThemeSwitcher({ className }: { className?: string }) {
           <p className="px-3 py-2 text-xs font-semibold tracking-wide text-muted-foreground uppercase">
             Choose a theme
           </p>
+          <button
+            type="button"
+            role="switch"
+            aria-checked={autoSwitch}
+            onClick={() => setAutoSwitch(!autoSwitch)}
+            className="mb-1 flex w-full items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-left hover:bg-muted"
+          >
+            <span className="min-w-0 flex-1">
+              <span className="block text-sm font-medium">Auto-switch themes</span>
+              <span className="block truncate text-xs text-muted-foreground">
+                Cycle every 5 seconds
+              </span>
+            </span>
+            <span
+              className={cn(
+                'relative inline-flex h-5 w-9 shrink-0 items-center rounded-full transition-colors',
+                autoSwitch ? 'bg-brand' : 'bg-muted-foreground/30',
+              )}
+            >
+              <span
+                className={cn(
+                  'inline-block size-4 rounded-full bg-background shadow transition-transform',
+                  autoSwitch ? 'translate-x-4' : 'translate-x-0.5',
+                )}
+              />
+            </span>
+          </button>
+          <div className="mx-3 mb-1 border-t border-border/60" />
           {THEMES.map((t) => {
             const selected = t.id === theme
             return (
