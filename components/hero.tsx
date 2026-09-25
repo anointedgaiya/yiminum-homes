@@ -49,6 +49,21 @@ export function Hero() {
                 Contact Yiminum Homes
               </a>
             </div>
+
+            <div className="mt-8 flex flex-wrap items-center gap-4 text-sm text-white/80">
+              {[
+                '1,200+ buyers guided',
+                '4.9/5 client satisfaction',
+                '98% closing success',
+              ].map((item) => (
+                <div
+                  key={item}
+                  className="rounded-full border border-white/20 bg-white/8 px-3 py-1.5 backdrop-blur-sm"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
