@@ -9,7 +9,7 @@ const FIELD =
 
 const CONTACT_DETAILS = [
   { icon: Phone, label: 'Call us', value: '07039014229' },
-  { icon: Mail, label: 'Email', value: 'hello@yiminumhomes.com' },
+  { icon: Mail, label: 'Email', value: 'anointedgaiya811@gmail.com' },
   { icon: MapPin, label: 'Visit', value: '400 Skyline Ave, Los Angeles' },
 ]
 
