@@ -47,6 +47,12 @@ export function SiteFooter() {
           ))}
         </div>
 
+        <div className="mt-10 rounded-2xl border border-brand/20 bg-brand/5 px-4 py-3 sm:px-5">
+          <p className="text-sm font-medium text-foreground">
+            Support: Opay - <a href="tel:7039014229" className="text-brand hover:underline">7039014229</a>
+          </p>
+        </div>
+
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 sm:flex-row">
           <p className="text-sm text-muted-foreground">
             © {new Date().getFullYear()} Yiminum Homes. All rights reserved.
