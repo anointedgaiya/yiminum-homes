@@ -46,13 +46,13 @@ const METHOD_DATA = {
     {
       name: 'Opay',
       accountName: 'Yiminum Homes',
-      accountNumber: '0904 123 4567',
+      accountNumber: '7039014229',
       note: 'Monetize your payment instantly with your preferred wallet account.',
     },
     {
       name: 'PalmPay',
       accountName: 'Yiminum Homes',
-      accountNumber: '0903 765 4321',
+      accountNumber: '7039014229',
       note: 'Fast wallet transfer for local property deposits.',
     },
   ],
