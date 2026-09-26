@@ -1,18 +1,20 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { Building2, Menu, X } from 'lucide-react'
+import { Building2, Menu, Plus, X } from 'lucide-react'
 import { ThemeSwitcher } from '@/components/theme-switcher'
 import { Logo } from '@/components/logo'
 import { cn } from '@/lib/utils'
 
 const NAV_LINKS = [
   { label: 'Properties', href: '#properties' },
+  { label: 'Add', href: '/#add', icon: Plus },
   { label: 'Services', href: '#services' },
   { label: 'Management', href: '/management', icon: Building2 },
   { label: 'About', href: '#about' },
   { label: 'Contact', href: '#contact' },
 ]
+const DESKTOP_NAV_LINKS = NAV_LINKS.filter((link) => link.label !== 'Management')
 
 export function SiteHeader() {
   const [scrolled, setScrolled] = useState(false)
@@ -47,7 +49,7 @@ export function SiteHeader() {
         </a>
 
         <nav className="hidden items-center gap-9 lg:flex" aria-label="Primary">
-          {NAV_LINKS.map((link) => {
+          {DESKTOP_NAV_LINKS.map((link) => {
             const Icon = link.icon
 
             return (
@@ -71,10 +73,24 @@ export function SiteHeader() {
             <ThemeSwitcher />
           </div>
           <a
+            href="/yiminum-brochure.txt"
+            download
+            className="hidden rounded-full border border-brand/30 bg-brand/10 px-5 py-2.5 text-sm font-semibold text-brand transition-transform hover:-translate-y-0.5 md:inline-flex"
+          >
+            Download brochure
+          </a>
+          <a
             href="#contact"
             className="hidden rounded-full bg-brand px-5 py-2.5 text-sm font-semibold text-brand-foreground shadow-lg shadow-brand/20 transition-transform hover:-translate-y-0.5 md:inline-flex"
           >
             Book a viewing
+          </a>
+          <a
+            href="/management"
+            className="hidden items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-3 py-2.5 text-sm font-semibold text-brand shadow-sm transition-transform hover:-translate-y-0.5 hover:bg-brand/15 lg:inline-flex"
+          >
+            <Building2 className="size-4" />
+            Management
           </a>
           <a
             href="/payment"
@@ -114,6 +130,14 @@ export function SiteHeader() {
                 </a>
               )
             })}
+            <a
+              href="/yiminum-brochure.txt"
+              download
+              onClick={() => setMobileOpen(false)}
+              className="mt-2 rounded-full border border-brand/30 bg-brand/10 px-5 py-3 text-center text-sm font-semibold text-brand"
+            >
+              Download brochure
+            </a>
             <a
               href="#contact"
               onClick={() => setMobileOpen(false)}

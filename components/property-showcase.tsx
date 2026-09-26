@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { PROPERTIES } from '@/lib/properties'
+import type { Property } from '@/lib/properties'
 import { PropertyCard } from '@/components/property-card'
 import { Reveal } from '@/components/reveal'
 import { cn } from '@/lib/utils'
@@ -9,10 +9,10 @@ import { cn } from '@/lib/utils'
 const FILTERS = ['All', 'For Sale', 'For Rent', 'Villa', 'Apartment'] as const
 type Filter = (typeof FILTERS)[number]
 
-export function PropertyShowcase() {
+export function PropertyShowcase({ properties: allProperties }: { properties: Property[] }) {
   const [filter, setFilter] = useState<Filter>('All')
 
-  const properties = PROPERTIES.filter((p) => {
+  const properties = allProperties.filter((p) => {
     if (filter === 'All') return true
     if (filter === 'For Sale' || filter === 'For Rent') return p.status === filter
     return p.type === filter
